@@ -42,9 +42,18 @@ def merge_sort(list_to_sort_by_merge):  # Funktion falsch benannt
 
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
+
+fig, (ax1, ax2) = plt.subplots(ncols=2, tight_layout=True)
+
+ax1.set_title('List before sorting')
+ax1.set_xlabel('Index')
+ax1.set_ylabel('Value')
+ax1.bar(x, my_list)
+
 merge_sort(my_list)
-x = range(len(my_list))
-plt.plot(x, my_list)
+ax2.set_title('List after sorting')
+ax2.set_xlabel('Index')
+ax2.set_ylabel('Value')
+ax2.bar(x, my_list)
+
 plt.show()
